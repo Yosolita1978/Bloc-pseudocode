@@ -1,0 +1,44 @@
+Short Answer
+
+1. Why do programmers use pseudocode?
+A. To clarify ideas. If you write the steps of the one instruction, step by step, you'll resolve the problem, or at least figure out what part you don't understand clearly.
+2. If you run pseudocode on your computer what would happen?
+A. It will throw an error. Pseudocode is just English-like statements. It will not compute in any programming language.
+
+Programming Assignment
+
+Write the following algorithms in pseudocode:
+
+1. Create a function that takes two numbers and prints out the greater number.
+Input first number
+Input second number
+Check if the first number is greater than second.
+If it's print the first number
+If it not print the second number
+
+
+2. Create a function that prints out the numbers from 1 to 100.
+Input a list of numbers from 1 to 100.
+Iterate the list using a for loop so:
+For every number in the list, print it
+
+3. Create a function that searches for a specific entry in a phonebook.
+Input a object with the data from the phonebook
+Input the specific entry we are looking For
+Iterate for the dictionary until you find the entry
+
+Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
+function searchObj (obj, query) {
+
+    for (var key in obj) {
+        var value = obj[key];
+
+        if (value === query) {
+            console.log('I found the query);
+            return value;
+        }
+
+    }
+
+}
