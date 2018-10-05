@@ -1,0 +1,86 @@
+1. A line of people at an amusement park ride.
+
+var parLine = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+a) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+var parLine = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+parLine.add("Mary");
+
+b) c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+function findAPerson(arrayPersons){
+
+  var index = 0;
+  for(let i = 0; i < arrayPersons.length; i++){
+      if(arrayPersons[i] === "Josh"){
+        index = i;
+        }
+    }
+    return index;
+}
+
+console.log(findAPersons(["Vivian", "Ava", "Josh", "Patrick", "Mike"]);
+
+c) d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+Usually, if you don't find the item, return -1 is a convention
+
+function findAPerson(arrayPersons){
+
+  var index = -1;
+  for(let i = 0; i < arrayPersons.length; i++){
+      if(arrayPersons[i] === "Emily"){
+        index = i;
+        }
+    }
+    return index;
+}
+
+d) e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+function addAPerson(stringOfPeople, position){
+    var newArrayOfPeople = [];
+    var firstPart = stringOfPeople.slice(0,position);
+    newArrayOfPeople.add(firstPart);
+    newArrayOfPeople.add("Melissa");
+    newArrayOfPeople.add(stringOfPeople.slice(position,));
+    return newArrayOfPeople;
+
+}
+
+console.log(addAPerson(["Vivian", "Ava", "Josh", "Patrick", "Mike"], 1));
+
+e)f) If Patrick wants to leave the line, how would you delete him from the array?
+
+function deleteAPerson(stringOfPeople, person){
+    var newArrayOfPeople = [];
+    var indexDelete = -1;
+    for(let i = 0; i < stringOfPeople.length; i++){
+      if(stringOfPeople[i] === name){
+        indexDelete = i;
+      }
+
+    if(indexDelete === 0){
+      return newArrayOfPeople.add(stringOfPeople.slice(indexDelete+1,));
+    } else if(indexDelete === -1){
+      return stringOfPeople;
+
+    }else{
+      newArrayOfPeople.add(stringOfPeople.slice(0,indexDelete));
+      newArrayOfPeople.add(stringOfPeople.slice(indexDelete+1,));
+      return newArrayOfPeople;
+    }
+  }
+}
+
+console.log(deleteAPerson(["Vivian", "Ava", "Josh", "Patrick", "Mike"], "Patrick"));
+
+
+2. Provide another real-world example that you can model using a data structure.
+
+A just did a little app for a conference program. Each conference is an array with the name of the conference.
+
+3. How would your data structure allow developers to access and manipulate the data?
+
+I'm presenting to the user a simple list with all the conferences for the day. Each conference has a name, and a index (the index of the array) so I know witch conference the user did click.
+ 
