@@ -1,12 +1,11 @@
-.App {
-  text-align: center;
+.app {
+  margin: 0px;
 }
 
 .App-header {
   background-color: #54287d;
   padding: 30px;
   color: white;
-  margin-bottom: 2rem;
 }
 
 .App-title {
@@ -14,12 +13,17 @@
 }
 
 .main {
-  width: 80%;
-  height: 900px;
+  width: 70%;
+  margin-right:20%;
+  margin-left:10px;
+  text-align: center;
+
 }
 
 .sidebar {
-  width: 20%;
-  background-color: rgb(240, 240, 240);
-  text-align: right;
+  width: 30%;
+  right:0;
+  background-color: #949494;
+  float: right;
+  padding: 10px;
 }
