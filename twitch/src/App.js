@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Form from "./components/form";
+import Games from "./components/Games";
 import Client_ID from "./credentials.js";
 import './App.css';
-
-
-console.log(Client_ID);
 
 class App extends Component {
   state = {
@@ -39,6 +37,8 @@ class App extends Component {
         <div className="main">
         <p> Search for your favorite games in the search box below. Click in ther name to find out more information about them</p>
         <Form getGame={this.getGame}/>
+        <h3> Games: </h3>
+        <Games games={this.state.games} />
         </div>
       </div>
     );

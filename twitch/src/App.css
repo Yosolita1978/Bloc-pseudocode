@@ -27,3 +27,17 @@
   float: right;
   padding: 10px;
 }
+
+.game_buttons {
+  width: 300px;
+  border: solid 1px #949494;
+  background: #fff;
+  padding-bottom: 0.5rem;
+  border-radius: 5px;
+  box-shadow: -1px 2px 34px -13px rgba(0,0,0,0.75);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  align-content: center;
+  text-align: left;
+}
