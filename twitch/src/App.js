@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
 import Form from "./components/form";
+import Client_ID from "./credentials.js";
 import './App.css';
 
-class App extends Component {
 
-  getGame = (e) => {
+console.log(Client_ID);
+
+class App extends Component {
+  state = {
+    games: []
+  }
+
+  getGame = async (e) => {
     const gameName = e.target.elements.gameName.value;
     e.preventDefault();
-    console.log(gameName);
+    const request = new Request(`https://api.twitch.tv/kraken/search/games?query=${gameName}`, {
+    headers: new Headers({
+    'Accept': 'application/vnd.twitchtv.v5+json',
+    'Client-ID': Client_ID
+  })
+})
+    const api_call = await fetch(request);
+    const data = await api_call.json();
+    this.setState({ games: data.games });
+    console.log(this.state.games);
   }
 
 
