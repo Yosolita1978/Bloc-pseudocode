@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Form from "./components/form";
 import Games from "./components/Games";
+import Game from "./components/Game";
 import Client_ID from "./credentials.js";
 import './App.css';
 
 class App extends Component {
   state = {
-    games: []
+    games: [],
+    selectedGame: null
   }
 
   getGame = async (e) => {
@@ -20,8 +22,12 @@ class App extends Component {
 })
     const api_call = await fetch(request);
     const data = await api_call.json();
-    this.setState({ games: data.games });
+    this.setState({ games: data.games.slice(0,5)});
     console.log(this.state.games);
+  }
+
+  onGameSelected = (game) => {
+    this.setState({selectedGame: game});
   }
 
 
@@ -31,14 +37,14 @@ class App extends Component {
         <header className="App-header text-center">
           <h1 className="App-title mt-5">Twitch Game Search</h1>
         </header>
-        <div className="sidebar">
-        <p>here goes the side bar</p>
-        </div>
+        { this.state.selectedGame ?
+        <Game game={this.state.selectedGame} />: null}
+
         <div className="main">
         <p> Search for your favorite games in the search box below. Click in ther name to find out more information about them</p>
         <Form getGame={this.getGame}/>
         <h3> Games: </h3>
-        <Games games={this.state.games} />
+        <Games games={this.state.games} onGameSelected={this.onGameSelected} />
         </div>
       </div>
     );

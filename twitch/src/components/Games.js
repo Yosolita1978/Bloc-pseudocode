@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Link } from "react-router-dom";
 
-const Games = props => (
-  <div className="container">
-    { props.games.map((game) => {
+const Games = props => {
+  const {games, onGameSelected} = props;
+  return (
+  <div className="container_games">
+    { games.map((game) => {
       return (
-        <div key={game.name} className="col-md-4" style={{ marginBottom:"0.5rem" }}>
+        <div key={game.name}>
           <div className="game__box">
-              <button className="game_buttons">
+              <button className="game_buttons" onClick={() => onGameSelected(game)}>
               { game.name }
             </button>
           </div>
@@ -16,6 +17,7 @@ const Games = props => (
       );
     })}
     </div>
-);
+  )
+};
 
 export default Games;
