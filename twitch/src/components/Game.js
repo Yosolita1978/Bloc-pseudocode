@@ -6,7 +6,7 @@ const Game = props => {
           <div className="sidebar">
           <h2>{game.name}</h2>
           <img src={game.box.medium} alt={game.name}/>
-          <h5>{game.popularity} viewers </h5>
+          <h5>{Number(game.popularity)} viewers </h5>
           </div>
       );
 };
